@@ -2,6 +2,6 @@
 
 
 Topics covered:
-CollapsingToolbarLayout
-Grid and Keylines
+CollapsingToolbarLayout<br/>
+Grid and Keylines<br/>
 

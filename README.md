@@ -1,7 +1,7 @@
 # EXAMPLE_MaterialDesign
 
 
-Topics covered:
+Topics covered:<br/>
 CollapsingToolbarLayout<br/>
 Grid and Keylines<br/>
 

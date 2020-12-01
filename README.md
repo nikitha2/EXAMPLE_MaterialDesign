@@ -1,4 +1,7 @@
 # EXAMPLE_MaterialDesign
 
 
-Topics covered:CollapsingToolbarLayout
+Topics covered:
+CollapsingToolbarLayout
+Grid and Keylines
+

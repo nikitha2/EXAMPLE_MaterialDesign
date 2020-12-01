@@ -1,33 +1,50 @@
-/*
- * Copyright 2015 Udacity, Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.android.dynamicsurfacesdemo;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends Activity {
+
+// contains a recycler view. on click on an Item user navigates to MainActivity
+public class MainActivity extends AppCompatActivity implements MainAdapter.ListItemClickListener {
+    RecyclerView recyclerView;
+    MainAdapter mainAdapter;
+    ArrayList<String> data=new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ((CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_layout)).setTitle("Eclairs");
+        populateData();
+        recyclerView=(RecyclerView)  findViewById(R.id.recycleview_mainActivity);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mainAdapter = new MainAdapter(this,data,this);
+        recyclerView.setAdapter(mainAdapter);
+    }
 
+    private void populateData() {
+        data.add(new String("list item 1"));
+        data.add(new String("list item 2"));
+        data.add(new String("list item 3"));
+        data.add(new String("list item 4"));
+        data.add(new String("list item 5"));
+        data.add(new String("list item 6"));
+        data.add(new String("list item 7"));
+        data.add(new String("list item 8"));
+        data.add(new String("list item 9"));
+        data.add(new String("list item 10"));
+    }
+
+    @Override
+    public void onListItemClick(int position) {
+        Intent intent=new Intent(this,CollapsingToolbarActivity.class);
+        startActivity(intent);
     }
 }

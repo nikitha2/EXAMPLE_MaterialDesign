@@ -33,6 +33,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".CollapsingToolbarActivity"
+            android:parentActivityName=".MainActivity"/>
+
     </application>
 
 </manifest>

@@ -1,6 +1,9 @@
 package com.example.android.dynamicsurfacesdemo;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +57,9 @@ public class MainAdapter extends RecyclerView.Adapter {
         String currentItemAtPos = data.get(position);
         TextView text_view= currentView.findViewById(R.id.text_view);
         text_view.setText(currentItemAtPos);
+
+        Typeface fontType = Typeface.createFromAsset(context.getAssets(), "Roboto-Regular.ttf");
+        text_view.setTypeface(fontType);
     }
 
     @Override
